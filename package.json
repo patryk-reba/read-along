@@ -1,0 +1,36 @@
+{
+  "name": "read-along",
+  "version": "0.1.0",
+  "description": "Free AI narration for articles, with the paragraph being read highlighted. Kokoro (open weights) runs on your machine; no API key, no per-listen cost.",
+  "license": "MIT",
+  "author": "Patryk Reba <patrykreba95@gmail.com> (https://patrykreba.com)",
+  "repository": { "type": "git", "url": "https://github.com/patryk-reba/read-along" },
+  "homepage": "https://github.com/patryk-reba/read-along#readme",
+  "keywords": ["tts", "text-to-speech", "narration", "kokoro", "read-aloud", "accessibility", "markdown", "blog"],
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./player": "./dist/player.js",
+    "./blocks": "./dist/blocks.js"
+  },
+  "bin": { "read-along": "dist/cli.js" },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p .",
+    "prepare": "tsc -p .",
+    "test": "tsc -p . && node --test test/"
+  },
+  "dependencies": {
+    "@breezystack/lamejs": "^1.2.7",
+    "kokoro-js": "^1.2.1",
+    "marked": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "typescript": "^7.0.0"
+  },
+  "overrides": { "sharp": "0.35.5" },
+  "engines": { "node": ">=22" }
+}
